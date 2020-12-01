@@ -92,8 +92,65 @@ $(document).ready(function() {
    variableNew = variable + ' ' + variableNew;
    console.log(variableNew);
 
+   // 3. IL NUOVO BLOCK SCOPE
+
+   // Scope -> Funzioni
+   var variable = 'pippo';
+   let secondVariable = 10;
+   const constantVariable = 'constance';
+   function myFunction(params) {
+      //Scope
+      variable = 'pluto';
+      secondVariable = 15;
+      // constantVariable = 'paperino';
+      //Uncaught TypeError: Assignment to constant variable.
+      let s ="hello";
+      var d = "hi";
+   }
+   myFunction();
+   // console.log(s);
+   // Uncaught ReferenceError: s is not defined
+   // console.log(d);
+   // Uncaught ReferenceError: d is not defined
+   console.log(variable); //pluto
+   console.log(secondVariable); //15
 
 
+   function myFunction(params) {
+      var r1 = 'pippo';
+      let r2 = 10;
+      const r3 = 'constance';
+   }
+   // console.log(r1);
+   // Uncaught ReferenceError: variable is not defined
+   // console.log(r2);
+   // Uncaught ReferenceError: secondVariable is not defined
+   // console.log(r3);
+   // Uncaught ReferenceError: constantVariable is not defined
 
+   // Scope -> Cicli
+   for (var k = 0; k < 15; k++) {
+      console.log(k);
+   }
+
+   console.log("This is value of k after for loop with var: ", k);
+   for (let i = 0; i < 15; i++) {
+      console.log(i);
+   }
+
+   // console.log("This is value of i after for loop with let: ", i);
+   // Uncaught ReferenceError: i is not defined
+
+   // Scope -> if
+   let boolean = true;
+   if (boolean) {
+      console.log("hello");
+      let boolean2 = false;
+   }
+
+   // console.log(boolean2);
+   // Uncaught ReferenceError: boolean2 is not defined
+
+   // 4. TEMPLATE LITERAL
 
 });
