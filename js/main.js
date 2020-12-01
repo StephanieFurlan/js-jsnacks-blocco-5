@@ -234,4 +234,34 @@ $(document).ready(function() {
    const copyObj = {...obj, colore: 'blue'};
    console.log(copyObj); //{name: "palla", peso: 50, colore: "blue"}
 
+   // 7. OBJECTS
+
+   let color = "blue";
+   let diameter = 30;
+   let border = "1px";
+
+   // es6 style
+   const circle = {
+      color,
+      diameter,
+      border
+   }
+
+   console.log(circle);
+
+   let name = 'Paolo';
+   let age = 30;
+   let email = 'paolo@email.it';
+   let nameKey = 'age';
+
+   const students = {
+      name: name,
+      [nameKey]: age,
+      email: email
+   };
+   console.log(students);
+   nameKey = "hello";
+   console.log(nameKey);
+   console.log(students);
+
 });
