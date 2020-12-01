@@ -69,6 +69,30 @@ $(document).ready(function() {
    console.log(object);
    // {name: "Pippo", age: 20}
 
+   // 2. CONST
+
+   x = 10;
+   var x;
+   console.log(x);
+   // no error
+
+   // y = 14;
+   let y;
+   // console.log(y);
+   // Uncaught ReferenceError: Cannot access 'y' before initialization
+
+   console.log(variable);
+   //undefined
+   var variable = ["hello"];
+   variable = 'pippo';
+
+   // console.log(variableNew);
+   // Uncaught ReferenceError: variableNew is not defined
+   let variableNew = 'pluto';
+   variableNew = variable + ' ' + variableNew;
+   console.log(variableNew);
+
+
 
 
 
