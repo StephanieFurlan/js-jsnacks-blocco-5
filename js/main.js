@@ -152,5 +152,86 @@ $(document).ready(function() {
    // Uncaught ReferenceError: boolean2 is not defined
 
    // 4. TEMPLATE LITERAL
+   let string = 'Qui';
+   let stringTwo = 'Qua';
+   console.log(
+   `
+   ${string} Quo ${stringTwo}
+   Andarono al mercato
+   `
+   );
+   // Qui Quo Qua
+   // Andarono al mercato
+
+   function sum(a, b) {
+      return a + b;
+   }
+
+   console.log(`The sum of 3 and 5 is ${sum(3,5)}`);
+
+   var a = 5;
+   var b = 10;
+
+   function tag(strings, ...values) {
+      console.log(strings);
+      console.log(strings[0]); // "Par1 Par1"
+      console.log(strings[1]); // "par2 "
+      console.log(values[0]);  // 15
+      console.log(values[1]);  // 50
+
+      return "hello!";
+   }
+
+   tag`Par1 Par1 ${ a + b } par2 ${ a * b }`;
+
+   // 5. ARROW FUNCTIONS
+
+   var multiply = (a,b) => a * b;
+   console.log(multiply(2,10));
+
+   //funzione con nome
+   const add = () => 1 + 1;
+   const resultFunction = add();
+
+   console.log(resultFunction);
+   //funzione anonima
+   document.getElementById('container').addEventListener('click',
+      () => console.log($(this))
+      // this is document
+      // function() {
+      //    console.log($(this))
+      //    // this is container
+      // }
+   );
+
+   // 6. REST E SPREAD
+
+   // function text(...myArguments) {
+   //    let s = ""
+   //    for(let i = 0; i < myArguments.length; i++) {
+   //       s += myArguments[i];
+   //    }
+   //    return s;
+   // }
+
+   var text = (...myArguments) => {
+         let s = ""
+         for(let i = 0; i < myArguments.length; i++) {
+            s += myArguments[i];
+         }
+         return s;
+      }
+
+   console.log(text("s", "t", "e", "p", "h", "a", "n", "i", "e"));
+
+   const arr1 = [3, 5, 1];
+   const arr2 = [8, 9, 15];
+
+   let mergedArray = [...arr1,...arr2];
+   console.log(mergedArray); //[3,5,1,8,9,15]
+
+   const obj = {name: 'palla', peso: 50};
+   const copyObj = {...obj, colore: 'blue'};
+   console.log(copyObj); //{name: "palla", peso: 50, colore: "blue"}
 
 });
